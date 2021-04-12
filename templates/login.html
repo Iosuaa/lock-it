@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %} Login {% endblock %}
+
+{% block content %}
+    <nav class="teal">
+        <div class="nav-wrapper">
+            <a class="brand-logo center">Lock-it!</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div>
+            <form method="post" action="">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <label>Enter Username</label>
+                <input type="text" autofocus required>
+                <label id="show-error" class="materialize-red-text" style="display:none">Please enter a Username</label><br>
+                <label>Enter Password</label>
+                <input type="password" autofocus required>
+                <label id="show-error" class="materialize-red-text" style="display:none">Please enter a Password</label><br>
+                <button type="submit" class="waves-effect waves-light btn" id="submitButton"><i
+                        class="material-icons right">exit_to_app</i>Login
+                </button>&nbsp;&nbsp;
+                <a class="waves-effect waves-light btn" href="#"><i class="material-icons right">enhanced_encryption
+                </i>Forgot password?</a>&nbsp;&nbsp;
+                <a class="waves-effect waves-light btn" href="#"><i class="material-icons right">add_box</i>Create
+                    account</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}
