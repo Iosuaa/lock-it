@@ -5,4 +5,4 @@ from django.views.generic import TemplateView
 
 
 class HomeTemplateView(TemplateView):
-    template_name = 'login.html'
+    template_name = 'registration/login.html'

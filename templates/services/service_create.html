@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %} Save Service {% endblock %}
+
+{% block content %}
+    <nav class="teal">
+        <div class="nav-wrapper">
+            <a class="brand-logo center">Password Manager</a>
+            <ul id="nav-mobile" class="left">
+                <li><a class="waves-effect waves-light  btn"> <i
+                        class="material-icons">arrow_back</i></a></li>
+
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+
+        <form method="post" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="input-field">
+                <label for="service">Service</label>
+                <input type="text" autofocus>
+                <span class="helper-text">Please enter the service</span>
+            </div>
+            <br/>
+            <div class="input-field">
+                <label for="username">Username*</label>
+                <input type="text" required>
+                <span class="helper-text">Please enter the username</span>
+
+            </div>
+            <br/>
+            <div class="input-field">
+                <label for="password">Password*</label>
+                <input type="password" required>
+                <span class="helper-text">Please enter the password </span>
+            </div>
+            <br/>
+            <label id="show-error" class="materialize-red-text" style="display:none">Username and Password cannot be
+                blank</label><br>
+
+            <button type="submit" class="waves-effect waves-light btn"><i
+                    class="material-icons left">save</i>Save
+            </button>
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Create User {% endblock %}
+
+{% block content %}
+
+    <nav class="teal">
+        <div class="nav-wrapper">
+            <a class="brand-logo center">Create account</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div>
+            <form method="post" action="">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="waves-effect waves-light btn" id="submitButton"><i
+                        class="material-icons right">forward</i>Create Account</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

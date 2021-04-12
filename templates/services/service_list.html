@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block tittle %} Service List {% endblock %}
+
+{% block content %}
+
+    <nav class="teal">
+        <div class="nav-wrapper">
+            <a class="brand-logo center">Service List</a>
+        </div>
+    </nav>
+
+    <table class="centered">
+        <tr>
+            <td>
+                <a class="waves-effect waves-light green btn"><i
+                        class="material-icons left">add</i>Add Service</a>
+            </td>
+            <td>
+                <a class="waves-effect waves-light blue btn"><i
+                        class="material-icons left">update</i>Change Password</a>
+            </td>
+            <td>
+                <a class="waves-effect waves-light red btn"><i class="material-icons left">delete_forever</i>Delete All</a>
+            </td>
+        </tr>
+    </table>
+    <table id="showServices" style="overflow-y:auto">
+    </table>
+
+    <!-- <div class="progress" id="progessBar">
+        <div class="indeterminate"></div>
+    </div> -->
+
+{% endblock %}
