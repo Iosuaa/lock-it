@@ -4,7 +4,7 @@
 {% block content %}
     <nav class="teal">
         <div class="nav-wrapper">
-            <a class="brand-logo center">Lock-it!</a>
+            <a class="brand-logo center">Lock-it</a>
         </div>
     </nav>
     <div class="container">
@@ -12,11 +12,6 @@
             <form method="post">
                 {% csrf_token %}
                 {{ form.as_p }}
-
-                {#                <label>Enter Username</label>#}
-                {#                <input type="text">#}
-                {#                <label>Enter Password</label>#}
-                {#                <input type="password">#}
                 <button type="submit" class="waves-effect waves-light btn"><i
                         class="material-icons right">exit_to_app</i>Login
                 </button>&nbsp;&nbsp;
