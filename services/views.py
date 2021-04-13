@@ -11,7 +11,7 @@ from services.models import Service
 class ServiceCreateView(LoginRequiredMixin, CreateView):
     template_name = 'services/service_create.html'
     model = Service
-    success_url = reverse_lazy('service_list')
+    success_url = reverse_lazy('services:service_list')
     form_class = ServiceForm
 
 
@@ -19,10 +19,11 @@ class ServiceListView(LoginRequiredMixin, ListView):
     template_name = 'services/service_list.html'
     model = Service
     context_object_name = 'all_services'
+    form_class = ServiceForm
 
 
 class ServiceUpdateView(LoginRequiredMixin, UpdateView):
-    template_name = ''
+    template_name = 'services/service_update.html'
     model = Service
     fields = '__all__'
     success_url = reverse_lazy('service_list')

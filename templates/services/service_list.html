@@ -13,23 +13,46 @@
     <table class="centered">
         <tr>
             <td>
-                <a class="waves-effect waves-light green btn"><i
+                <a class="waves-effect waves-light green btn" href= {% url 'services:service_create' %}><i
                         class="material-icons left">add</i>Add Service</a>
             </td>
             <td>
-                <a class="waves-effect waves-light blue btn"><i
-                        class="material-icons left">update</i>Change Password</a>
+                <a class="waves-effect waves-light blue btn" href={% url 'logout' %}><i
+                        class="material-icons left">lock</i>Logout</a>
             </td>
             <td>
                 <a class="waves-effect waves-light red btn"><i class="material-icons left">delete_forever</i>Delete All</a>
             </td>
         </tr>
+
+        <tr>
+            <td>Service Name</td>
+            <td>User or Email</td>
+            <td>Password</td>
+        </tr>
+
+
+        <tbody>
+        {% for service in all_services %}
+            <tr>
+                <td>{{ service.name }}</td>
+                <td>{{ service.username }}</td>
+                <td>{{ service.password }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
     </table>
-    <table id="showServices" style="overflow-y:auto">
+    <table style="overflow-y:auto">
     </table>
 
-    <!-- <div class="progress" id="progessBar">
-        <div class="indeterminate"></div>
-    </div> -->
+
+
+
+
+
+
+    {#    <div class="progress">#}
+    {#        <div class="indeterminate"></div>#}
+    {#    </div> #}
 
 {% endblock %}

@@ -10,8 +10,8 @@ class ServiceForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'name': TextInput(attrs={'placeholder': 'Type service name'}),
-            'username': TextInput(attrs={'placeholder': 'Type a username'}),
-            'password': forms.PasswordInput(attrs={'placeholder': 'Type a password'}),
+            'username': TextInput(attrs={'placeholder': 'Type service email or username'}),
+            'password': forms.PasswordInput(attrs={'placeholder': 'Type service password'}),
         }
 
     def __init__(self, *args, **kwargs):
