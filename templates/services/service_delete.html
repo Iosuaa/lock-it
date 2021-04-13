@@ -5,12 +5,12 @@
 {% block content %}
     <nav class="teal">
         <div class="nav-wrapper">
-            <a class="brand-logo center">Delete Service
-                <ul id="nav-mobile" class="left">
-                    <li><a class="waves-effect waves-light  btn" href={% url 'services:service_list' %}> <i
-                            class="material-icons">arrow_back</i></a></li>
+            <a class="brand-logo center">Delete Service</a>
+            <ul id="nav-mobile" class="left">
+                <li><a class="waves-effect waves-light  btn" href={% url 'services:service_list' %}> <i
+                        class="material-icons">arrow_back</i></a></li>
 
-                </ul>
+            </ul>
         </div>
     </nav>
     <div class="container">
@@ -18,8 +18,8 @@
             <form method="post" action="">
                 {% csrf_token %}
                 <p class="flow-text">Are you sure you want to delete this Service?</p>
-                <a class="waves-effect waves-light light-blue accent-4 btn" href={% url 'services:service_list'%}><i
-                            class="material-icons right">keyboard_return</i>Return</a> &nbsp;&nbsp;
+                <a class="waves-effect waves-light light-blue accent-4 btn" href={% url 'services:service_list' %}><i
+                        class="material-icons right">keyboard_return</i>Return</a> &nbsp;&nbsp;
                 <button type="submit" class="waves-effect waves-light red btn"><i
                         class="material-icons right">delete</i>Delete
                 </button>
