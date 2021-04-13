@@ -13,16 +13,16 @@
                 {% csrf_token %}
                 {{ form.as_p }}
 
-{#                <label>Enter Username</label>#}
-{#                <input type="text">#}
-{#                <label>Enter Password</label>#}
-{#                <input type="password">#}
+                {#                <label>Enter Username</label>#}
+                {#                <input type="text">#}
+                {#                <label>Enter Password</label>#}
+                {#                <input type="password">#}
                 <button type="submit" class="waves-effect waves-light btn"><i
                         class="material-icons right">exit_to_app</i>Login
                 </button>&nbsp;&nbsp;
                 <a class="waves-effect waves-light btn" href="#"><i class="material-icons right">enhanced_encryption
                 </i>Forgot password?</a>&nbsp;&nbsp;
-                <a class="waves-effect waves-light btn" href={% url 'create-user' %}><i class="material-icons right">add_box</i>Create
+                <a class="waves-effect waves-light btn" href={% url 'create-user' %}><i class="material-icons right">person_add</i>Create
                     account</a>
             </form>
         </div>

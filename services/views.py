@@ -26,11 +26,11 @@ class ServiceUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'services/service_update.html'
     model = Service
     fields = '__all__'
-    success_url = reverse_lazy('service_list')
+    success_url = reverse_lazy('services:service_list')
 
 
 class ServiceDeleteView(LoginRequiredMixin, DeleteView):
-    template_name = ''
+    template_name = 'services/service_delete.html'
     model = Service
     fields = '__all__'
-    success_url = reverse_lazy('service_list')
+    success_url = reverse_lazy('services:service_list')
