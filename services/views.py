@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 
-from services.forms import ServiceForm
+from services.forms import ServiceForm, ServiceUpdateForm
 from services.models import Service
 
 
@@ -19,13 +19,13 @@ class ServiceListView(LoginRequiredMixin, ListView):
     template_name = 'services/service_list.html'
     model = Service
     context_object_name = 'all_services'
-    form_class = ServiceForm
 
 
 class ServiceUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'services/service_update.html'
     model = Service
-    fields = '__all__'
+    # fields = '__all__'
+    form_class = ServiceUpdateForm
     success_url = reverse_lazy('services:service_list')
 
 
