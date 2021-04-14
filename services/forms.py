@@ -1,6 +1,5 @@
 from django import forms
 from django.forms import TextInput
-
 from services.models import Service
 
 
@@ -44,4 +43,3 @@ class ServiceUpdateForm(forms.ModelForm):
         self.fields['name'].requierd = True
         self.fields['username'].requierd = True
         self.fields['password'].requierd = True
-
