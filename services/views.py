@@ -1,5 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
@@ -14,11 +14,23 @@ class ServiceCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy('services:service_list')
     form_class = ServiceForm
 
+    def form_valid(self, form):
+        print(form)
+        name = form.cleaned_data['name']
+        username = form.cleaned_data['username']
+        password = form.cleaned_data['password']
+        service = Service.objects.create(user=self.request.user, name=name, username=username, password=password)
+        return redirect(self.success_url)
+
 
 class ServiceListView(LoginRequiredMixin, ListView):
     template_name = 'services/service_list.html'
     model = Service
     context_object_name = 'all_services'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        services = Service.objects.filter(user=self.request.user)
+        return {'all_services': services}
 
 
 class ServiceUpdateView(LoginRequiredMixin, UpdateView):
