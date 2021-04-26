@@ -1,3 +1,4 @@
+from django.contrib.auth.hashers import make_password, PBKDF2PasswordHasher
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 
@@ -19,6 +20,8 @@ class ServiceCreateView(LoginRequiredMixin, CreateView):
         name = form.cleaned_data['name']
         username = form.cleaned_data['username']
         password = form.cleaned_data['password']
+        # hasher = PBKDF2PasswordHasher()
+        # enc_password = hasher.encode(password, salt='abc')
         service = Service.objects.create(user=self.request.user, name=name, username=username, password=password)
         return redirect(self.success_url)
 
@@ -30,6 +33,9 @@ class ServiceListView(LoginRequiredMixin, ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         services = Service.objects.filter(user=self.request.user)
+        # hasher = PBKDF2PasswordHasher()
+        # for service in services:
+        #     service.password = hasher.decode(service.password)
         return {'all_services': services}
 
 

@@ -5,5 +5,7 @@
 /../../../../../:\Documents\_Projects\lockit\.idea/dataSources/
 /dataSources.local.xml
 .idea
+/../lockit/email_auth.py
+email_auth.py
 # Editor-based HTTP Client requests
 /httpRequests/
